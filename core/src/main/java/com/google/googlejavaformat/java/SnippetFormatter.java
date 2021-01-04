@@ -23,6 +23,8 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Range;
 import com.google.common.collect.RangeSet;
 import com.google.common.collect.TreeRangeSet;
+import com.google.googlejavaformat.java.JavaFormatterOptions.Style;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -60,7 +62,7 @@ public class SnippetFormatter {
   }
 
   private static final int INDENTATION_SIZE = 2;
-  private final Formatter formatter = new Formatter();
+  private final Formatter formatter = new Formatter(JavaFormatterOptions.builder().style(Style.AOSP).formatJavadoc(false).build());
   private static final CharMatcher NOT_WHITESPACE = CharMatcher.whitespace().negate();
 
   public String createIndentationString(int indentationLevel) {
