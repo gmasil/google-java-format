@@ -6,8 +6,10 @@ function usejdk {
 }
 
 usejdk 15
-mvn install -DskipTests
+mvn clean install -DskipTests
 
 cd eclipse_plugin
+rm -rf lib
+mkdir lib
 usejdk 8
-mvn compile install
+mvn clean install
